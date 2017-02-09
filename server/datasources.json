@@ -1,0 +1,10 @@
+{
+  "cloudant-leave": {
+    "url": "https://72e40a98-c795-4c36-ae60-527444b406f4-bluemix:500edb6c6f5cc2789d56136b4e28368bf253d0e8d5add33a0972fbd6fe7c50b6@72e40a98-c795-4c36-ae60-527444b406f4-bluemix.cloudant.com",
+    "database": "employeeleaves",
+    "username": "72e40a98-c795-4c36-ae60-527444b406f4-bluemix",
+    "password": "500edb6c6f5cc2789d56136b4e28368bf253d0e8d5add33a0972fbd6fe7c50b6",
+    "name": "cloudant-leave",
+    "connector": "cloudant"
+  }
+}
