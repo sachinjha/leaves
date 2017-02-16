@@ -6,25 +6,31 @@
     "validateUpsert": true
   },
   "properties": {
-    "endDate": {
-      "type": "date",
+    "type": {
+      "type": "string",
       "required": true
     },
     "startDate": {
       "type": "date",
       "required": true
     },
-    "status": {
-      "type": "string",
+    "endDate": {
+      "type": "date",
       "required": true
     },
-    "type": {
+    "status": {
       "type": "string",
       "required": true
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "employee": {
+      "type": "belongsTo",
+      "model": "Employee",
+      "foreignKey": ""
+    }
+  },
   "acls": [],
   "methods": {}
 }

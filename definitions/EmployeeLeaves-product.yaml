@@ -1,13 +1,13 @@
 product: '1.0.0'
 
 info:
-  name: leave
-  title: Leave
+  name: employeeleaves
+  title: EmployeeLeaves
   version: 1.0.0
 
 apis:
-  'leave':
-    $ref: Leave.yaml
+  'employeeleaves':
+    $ref: EmployeeLeaves.yaml
 
 visibility:
   view:

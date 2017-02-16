@@ -18,7 +18,7 @@
     "public": true
   },
   "Leave": {
-    "dataSource": "db",
+    "dataSource": "cloudant-leave",
     "public": true
   }
 }

@@ -1,0 +1,744 @@
+paths:
+  '/Employees/{id}/leaves/{fk}':
+    get:
+      tags:
+        - Employee
+      summary: Find a related item by id for leaves.
+      operationId: Employee.prototype.__findById__leaves
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for leaves
+          required: true
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: Employee id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/Leave'
+      deprecated: false
+    delete:
+      tags:
+        - Employee
+      summary: Delete a related item by id for leaves.
+      operationId: Employee.prototype.__destroyById__leaves
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for leaves
+          required: true
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: Employee id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+    put:
+      tags:
+        - Employee
+      summary: Update a related item by id for leaves.
+      operationId: Employee.prototype.__updateById__leaves
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for leaves
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/Leave'
+        - name: id
+          in: path
+          description: Employee id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/Leave'
+      deprecated: false
+  '/Employees/{id}/leaves':
+    get:
+      tags:
+        - Employee
+      summary: Queries leaves of Employee.
+      operationId: Employee.prototype.__get__leaves
+      parameters:
+        - name: filter
+          in: query
+          required: false
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: Employee id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Leave'
+      deprecated: false
+    post:
+      tags:
+        - Employee
+      summary: Creates a new instance in leaves of this model.
+      operationId: Employee.prototype.__create__leaves
+      parameters:
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/Leave'
+        - name: id
+          in: path
+          description: Employee id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/Leave'
+      deprecated: false
+    delete:
+      tags:
+        - Employee
+      summary: Deletes all leaves of this model.
+      operationId: Employee.prototype.__delete__leaves
+      parameters:
+        - name: id
+          in: path
+          description: Employee id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+  '/Employees/{id}/leaves/count':
+    get:
+      tags:
+        - Employee
+      summary: Counts leaves of Employee.
+      operationId: Employee.prototype.__count__leaves
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: Employee id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              count:
+                type: number
+                format: double
+      deprecated: false
+  /Employees:
+    post:
+      tags:
+        - Employee
+      summary: Create a new instance of the model and persist it into the data source.
+      operationId: Employee.create
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/Employee'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/Employee'
+      deprecated: false
+    put:
+      tags:
+        - Employee
+      summary: >-
+        Patch an existing model instance or insert a new one into the data
+        source.
+      operationId: Employee.upsert__put_Employees
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/Employee'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/Employee'
+      deprecated: false
+    patch:
+      tags:
+        - Employee
+      summary: >-
+        Patch an existing model instance or insert a new one into the data
+        source.
+      operationId: Employee.upsert__patch_Employees
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/Employee'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/Employee'
+      deprecated: false
+    get:
+      tags:
+        - Employee
+      summary: Find all instances of the model matched by filter from the data source.
+      operationId: Employee.find
+      parameters:
+        - name: filter
+          in: query
+          description: 'Filter defining fields, where, include, order, offset, and limit'
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Employee'
+      deprecated: false
+  '/Employees/{id}':
+    head:
+      tags:
+        - Employee
+      summary: Check whether a model instance exists in the data source.
+      operationId: 'Employee.exists__head_Employees_{id}'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              exists:
+                type: boolean
+      deprecated: false
+    get:
+      tags:
+        - Employee
+      summary: 'Find a model instance by {{id}} from the data source.'
+      operationId: Employee.findById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: filter
+          in: query
+          description: Filter defining fields and include
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/Employee'
+      deprecated: false
+    delete:
+      tags:
+        - Employee
+      summary: 'Delete a model instance by {{id}} from the data source.'
+      operationId: Employee.deleteById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+      deprecated: false
+    put:
+      tags:
+        - Employee
+      summary: >-
+        Patch attributes for a model instance and persist it into the data
+        source.
+      operationId: 'Employee.prototype.updateAttributes__put_Employees_{id}'
+      parameters:
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/Employee'
+        - name: id
+          in: path
+          description: Employee id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/Employee'
+      deprecated: false
+    patch:
+      tags:
+        - Employee
+      summary: >-
+        Patch attributes for a model instance and persist it into the data
+        source.
+      operationId: 'Employee.prototype.updateAttributes__patch_Employees_{id}'
+      parameters:
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/Employee'
+        - name: id
+          in: path
+          description: Employee id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/Employee'
+      deprecated: false
+  /Employees/findOne:
+    get:
+      tags:
+        - Employee
+      summary: Find first instance of the model matched by filter from the data source.
+      operationId: Employee.findOne
+      parameters:
+        - name: filter
+          in: query
+          description: 'Filter defining fields, where, include, order, offset, and limit'
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/Employee'
+      deprecated: false
+  /Employees/count:
+    get:
+      tags:
+        - Employee
+      summary: Count instances of the model matched by where from the data source.
+      operationId: Employee.count
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              count:
+                type: number
+                format: double
+      deprecated: false
+  /Leaves:
+    post:
+      tags:
+        - Leave
+      summary: Create a new instance of the model and persist it into the data source.
+      operationId: Leave.create
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/Leave'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/Leave'
+      deprecated: false
+    put:
+      tags:
+        - Leave
+      summary: >-
+        Patch an existing model instance or insert a new one into the data
+        source.
+      operationId: Leave.upsert__put_Leaves
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/Leave'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/Leave'
+      deprecated: false
+    patch:
+      tags:
+        - Leave
+      summary: >-
+        Patch an existing model instance or insert a new one into the data
+        source.
+      operationId: Leave.upsert__patch_Leaves
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/Leave'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/Leave'
+      deprecated: false
+    get:
+      tags:
+        - Leave
+      summary: Find all instances of the model matched by filter from the data source.
+      operationId: Leave.find
+      parameters:
+        - name: filter
+          in: query
+          description: 'Filter defining fields, where, include, order, offset, and limit'
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Leave'
+      deprecated: false
+  '/Leaves/{id}':
+    head:
+      tags:
+        - Leave
+      summary: Check whether a model instance exists in the data source.
+      operationId: 'Leave.exists__head_Leaves_{id}'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              exists:
+                type: boolean
+      deprecated: false
+    get:
+      tags:
+        - Leave
+      summary: 'Find a model instance by {{id}} from the data source.'
+      operationId: Leave.findById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: filter
+          in: query
+          description: Filter defining fields and include
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/Leave'
+      deprecated: false
+    delete:
+      tags:
+        - Leave
+      summary: 'Delete a model instance by {{id}} from the data source.'
+      operationId: Leave.deleteById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+      deprecated: false
+    put:
+      tags:
+        - Leave
+      summary: >-
+        Patch attributes for a model instance and persist it into the data
+        source.
+      operationId: 'Leave.prototype.updateAttributes__put_Leaves_{id}'
+      parameters:
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/Leave'
+        - name: id
+          in: path
+          description: Leave id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/Leave'
+      deprecated: false
+    patch:
+      tags:
+        - Leave
+      summary: >-
+        Patch attributes for a model instance and persist it into the data
+        source.
+      operationId: 'Leave.prototype.updateAttributes__patch_Leaves_{id}'
+      parameters:
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/Leave'
+        - name: id
+          in: path
+          description: Leave id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/Leave'
+      deprecated: false
+  /Leaves/findOne:
+    get:
+      tags:
+        - Leave
+      summary: Find first instance of the model matched by filter from the data source.
+      operationId: Leave.findOne
+      parameters:
+        - name: filter
+          in: query
+          description: 'Filter defining fields, where, include, order, offset, and limit'
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/Leave'
+      deprecated: false
+  /Leaves/count:
+    get:
+      tags:
+        - Leave
+      summary: Count instances of the model matched by where from the data source.
+      operationId: Leave.count
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              count:
+                type: number
+                format: double
+      deprecated: false
+definitions:
+  x-any:
+    properties: {}
+  Leave:
+    properties:
+      type:
+        type: string
+      startDate:
+        type: string
+        format: date
+      endDate:
+        type: string
+        format: date
+      status:
+        type: string
+      id:
+        type: string
+      employeeId:
+        type: string
+    required:
+      - type
+      - startDate
+      - endDate
+      - status
+    additionalProperties: false
+  Employee:
+    properties:
+      name:
+        type: string
+      email:
+        type: string
+      id:
+        type: string
+    required:
+      - name
+      - email
+    additionalProperties: false
+basePath: /api
+swagger: '2.0'
+info:
+  x-ibm-name: employeeleaves
+  version: 1.0.0
+  title: EmployeeLeaves
+schemes:
+  - https
+host: $(catalog.host)
+consumes:
+  - application/json
+produces:
+  - application/json
+securityDefinitions:
+  clientIdHeader:
+    type: apiKey
+    in: header
+    name: X-IBM-Client-Id
+  clientSecretHeader:
+    in: header
+    name: X-IBM-Client-Secret
+    type: apiKey
+security:
+  - clientIdHeader: []
+    clientSecretHeader: []
+x-ibm-configuration:
+  testable: true
+  enforced: true
+  cors:
+    enabled: true
+  catalogs:
+    apic-dev:
+      properties:
+        runtime-url: $(TARGET_URL)
+    sb:
+      properties:
+        runtime-url: 'https://'
+        invoke-tls-profile: 'client:Loopback-client'
+  assembly:
+    execute:
+      - invoke:
+          target-url: $(runtime-url)$(request.path)$(request.search)
+          tls-profile: $(invoke-tls-profile)
+  properties:
+    runtime-url:
+      value: ''
+      description: ''
+      encoded: false
+    invoke-tls-profile:
+      value: ''
+      description: ''
+      encoded: false
